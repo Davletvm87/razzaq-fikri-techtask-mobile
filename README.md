@@ -1,4 +1,3 @@
-__Language :__ English | [Bahasa Indonesia](README_ID.md)
 
 [![Codemagic build status](https://api.codemagic.io/apps/5f14bc9a20f1651e4a628154/5f14bc9a20f1651e4a628153/status_badge.svg)](https://codemagic.io/apps/5f14bc9a20f1651e4a628154/5f14bc9a20f1651e4a628153/latest_build)
 
