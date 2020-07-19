@@ -26,7 +26,7 @@ class CurrentIngredientsIdle extends CurrentIngredientsState {
   CurrentIngredientsIdle(List<Ingredient> ingredients) : super(ingredients);
 
   @override
-  List<Object> get props => [ingredients];
+  List<Object> get props => [ingredients.length];
 
   @override
   bool get stringify => true;

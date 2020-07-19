@@ -10,7 +10,7 @@ class AddRemoveIngredientEvent extends CurrentIngredientsEvent {
   AddRemoveIngredientEvent(this.ingredient);
 
   @override
-  String toString() => 'Add: ' + ingredient.toString();
+  String toString() => 'Add/Remove: ' + ingredient.toString();
 }
 
 @immutable
