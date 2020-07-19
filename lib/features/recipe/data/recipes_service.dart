@@ -18,7 +18,6 @@ class RecipesService extends Service<List<Ingredient>, List<Recipe>> {
     );
 
     if (response.statusCode >= 200 && response.statusCode < 300) {
-      print("PODOLLLLLLLL ${response.data}");
       return recipeFromJson(response.data);
     }
 

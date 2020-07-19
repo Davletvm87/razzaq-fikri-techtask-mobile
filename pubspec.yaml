@@ -12,7 +12,6 @@ dependencies:
 
   bloc: ^5.0.1
   flutter_bloc: ^5.0.1
-  rxdart: ^0.24.1
   equatable: ^1.2.2
   dio: ^3.0.9
   intl: ^0.16.1

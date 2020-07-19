@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 List<Recipe> recipeFromJson(List<dynamic> resp) {
   String encodedResp = json.encode(resp);
-  print("PODOL $encodedResp");
   return List<Recipe>.from(
       json.decode(encodedResp).map((x) => Recipe.fromJson(x)));
 }
