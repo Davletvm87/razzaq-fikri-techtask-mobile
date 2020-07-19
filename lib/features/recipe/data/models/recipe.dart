@@ -22,18 +22,6 @@ class Recipe extends Equatable {
   @override
   List<Object> get props => [title, ingredients];
 
-  @override
-  String toString() => '$title - $ingredients';
-
-  Recipe copyWith({
-    String title,
-    List<String> ingredients,
-  }) =>
-      Recipe(
-        title: title ?? this.title,
-        ingredients: ingredients ?? this.ingredients,
-      );
-
   factory Recipe.fromJson(Map<String, dynamic> json) => Recipe(
         title: json["title"],
         ingredients: List<String>.from(json["ingredients"].map((x) => x)),
