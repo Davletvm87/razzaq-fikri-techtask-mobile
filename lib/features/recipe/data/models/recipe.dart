@@ -3,8 +3,12 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-List<Recipe> recipeFromJson(String str) =>
-    List<Recipe>.from(json.decode(str).map((x) => Recipe.fromJson(x)));
+List<Recipe> recipeFromJson(List<dynamic> resp) {
+  String encodedResp = json.encode(resp);
+  print("PODOL $encodedResp");
+  return List<Recipe>.from(
+      json.decode(encodedResp).map((x) => Recipe.fromJson(x)));
+}
 
 String recipeToJson(List<Recipe> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));

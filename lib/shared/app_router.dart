@@ -16,8 +16,9 @@ class AppRouter {
         );
         break;
       case routeIngredients:
+        DateTime selectedDate = settings.arguments as DateTime;
         return MaterialPageRoute(
-          builder: (context) => PageIngredients(),
+          builder: (context) => PageIngredients(selectedDate: selectedDate),
         );
         break;
       case routeRecipes:

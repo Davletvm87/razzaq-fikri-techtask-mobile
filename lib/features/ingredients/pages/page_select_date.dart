@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/shared.dart';
+import '../../../widgets/widgets.dart';
 
 class PageSelectDate extends StatefulWidget {
   @override
@@ -17,19 +18,31 @@ class _PageSelectDateState extends State<PageSelectDate> {
     _textEditingController = TextEditingController();
 
     _selectedDate = DateTime.now();
-    _textEditingController.text = _selectedDate.toIso8601String();
+    _textEditingController.text =
+        FormatDate.getStringFormattedDateTime(_selectedDate);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Lunch Recipe Suggestion',
-          style: Theme.of(context).textTheme.headline1,
-        ),
-      ),
-      body: Container(),
+    return TmpSelectDate(
+      controller: _textEditingController,
+      onPressedSelectDate: () async {
+        setState(() async {
+          _selectedDate = await showDatePicker(
+            context: context,
+            initialDate: _selectedDate,
+            firstDate: DateTime.now(),
+            lastDate: DateTime.now().add(Duration(days: 30)),
+          );
+
+          _textEditingController.text =
+              FormatDate.getStringFormattedDateTime(_selectedDate);
+        });
+      },
+      onPressedShowIngredients: () {
+        Navigator.pushNamed(context, AppRouter.routeIngredients,
+            arguments: _selectedDate);
+      },
     );
   }
 }

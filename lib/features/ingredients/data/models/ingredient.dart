@@ -3,8 +3,11 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-List<Ingredient> ingredientFromJson(String str) =>
-    List<Ingredient>.from(json.decode(str).map((x) => Ingredient.fromJson(x)));
+List<Ingredient> ingredientFromJson(List<dynamic> resp) {
+  String encodedResp = json.encode(resp);
+  return List<Ingredient>.from(
+      json.decode(encodedResp).map((x) => Ingredient.fromJson(x)));
+}
 
 String ingredientToJson(List<Ingredient> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
