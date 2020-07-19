@@ -28,7 +28,6 @@ class _PageSelectDateState extends State<PageSelectDate> {
           'Lunch Recipe Suggestion',
           style: Theme.of(context).textTheme.headline1,
         ),
-        centerTitle: true,
       ),
       body: Container(),
     );
